@@ -1,9 +1,9 @@
 import React from 'react'
 
-const new_post = () => {
+const New_post = () => {
   return (
     <div>new_post</div>
   )
 }
 
-export default new_post
+export default New_post

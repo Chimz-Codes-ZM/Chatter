@@ -2,6 +2,7 @@ import React, {useEffect, useState, useContext} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BiBookmarks } from "react-icons/bi";
+import { BsFillPenFill } from "react-icons/bs"
 import { AiOutlineTeam } from "react-icons/ai";
 import {
   MdOutlineDrafts,
@@ -83,6 +84,24 @@ router.push('/')
                   <h1 className="text-xl">Overview</h1>
                 </div>
                 <div className="w-full flex flex-col">
+                  <Link href="/dashboard/write">
+                    <div
+                      className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
+											${
+                        activePage === "write" 
+                          ? "font-bold  text-[#543EE0]"
+                          : "hover:font-bold hover:text-[#543EE0] text-gray-400"
+                      }
+										`}
+                    >
+                      <div className="text-xl">
+                        <BsFillPenFill />
+                      </div>
+                      <h1 className="hidden sm:block">Write</h1>
+                    </div>
+                  </Link>
+                </div>
+                <div className="w-full flex flex-col">
                   <Link href="/dashboard">
                     <div
                       className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
@@ -94,38 +113,20 @@ router.push('/')
 										`}
                     >
                       <div className="text-xl">
-                        <MdDynamicFeed />
+                      <MdDynamicFeed />
                       </div>
                       <h1 className="hidden sm:block">Feed</h1>
                     </div>
                   </Link>
                 </div>
                 <div className="w-full flex flex-col">
-                  <Link href="/dashboard">
-                    <div
-                      className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
-											${
-                        activePage === "bookmarks"
-                          ? "font-bold  text-[#543EE0]"
-                          : "hover:font-bold hover:text-[#543EE0] "
-                      }
-										`}
-                    >
-                      <div className="text-xl">
-                        <BiBookmarks />
-                      </div>
-                      <h1 className="hidden sm:block">Bookmarks</h1>
-                    </div>
-                  </Link>
-                </div>
-                <div className="w-full flex flex-col">
-                  <Link href="/dashboard">
+                  <Link href="/dashboard/team_blogs">
                     <div
                       className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
 											${
                         activePage === "team blogs"
                           ? "font-bold  text-[#543EE0]"
-                          : "hover:font-bold hover:text-[#543EE0] "
+                          : "hover:font-bold hover:text-[#543EE0] text-gray-400"
                       }
 										`}
                     >
@@ -143,7 +144,7 @@ router.push('/')
 											${
                         activePage === "drafts"
                           ? "font-bold  text-[#543EE0]"
-                          : "hover:font-bold hover:text-[#543EE0] "
+                          : "hover:font-bold hover:text-[#543EE0] text-gray-400"
                       }
 										`}
                     >
@@ -155,13 +156,13 @@ router.push('/')
                   </Link>
                 </div>
                 <div className="w-full flex flex-col">
-                  <Link href="/dashboard">
+                  <Link href="/dashboard/analytics">
                     <div
                       className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
 											${
                         activePage === "analytics"
                           ? "font-bold  text-[#543EE0]"
-                          : "hover:font-bold hover:text-[#543EE0] "
+                          : "hover:font-bold hover:text-[#543EE0] text-gray-400"
                       }
 										`}
                     >
@@ -178,7 +179,7 @@ router.push('/')
                 <div className="flex flex-col ">
                   <h1 className="text-xl">Personal</h1>
                   <div className="w-full flex flex-col">
-                    <Link href="/dashboard">
+                    <Link href="/dashboard/personal/account">
                       <div
                         className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
 											${
@@ -197,7 +198,7 @@ router.push('/')
                   </div>
 
                   <div className="w-full flex flex-col">
-                    <Link href="/dashboard">
+                    <Link href="/dashboard/personal/notifications">
                       <div
                         className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
 											${
