@@ -238,7 +238,7 @@ router.push('/')
            </div>
         </nav>
 
-        <div className="w-full h-full pt-16">{children}</div>
+        <div className="w-full h-full pt-16 overflow-y-scroll">{children}</div>
       </main>
     </>
   );

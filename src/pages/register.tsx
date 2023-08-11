@@ -54,14 +54,7 @@ if ( response.status !== 200 )   {
   
 
   
-  async function signInWithGoogle() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: 'http://localhost:3000/dashboard'
-      },
-    })
-  }
+ 
   return (
     <Layout>
       <section className="relative grid grid-cols-5 lg:h-screen lg:items-center">
@@ -234,7 +227,7 @@ if ( response.status !== 200 )   {
                 </p>
 
                 <div className="w-full">
-                  <div onClick={signInWithGoogle} className="inline-block cursor-pointer shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
+                  <div  className="inline-block cursor-pointer shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
                     Sign in with Google
                   </div>
                 </div>
