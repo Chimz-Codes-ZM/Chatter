@@ -58,7 +58,7 @@ if ( response.status !== 200 )   {
   return (
     <Layout>
       <section className="relative grid grid-cols-5 lg:h-screen lg:items-center">
-        <div className="relative h-64 w-full sm:h-96 lg:h-full col-span-2">
+        <div className="relative h-64 w-full sm:h-96 lg:h-full col-span-2 hidden lg:block overflow-hidden">
           <Image
             alt="Welcome"
             src={Login_image}
@@ -74,8 +74,8 @@ if ( response.status !== 200 )   {
           </div>
         </div>
 
-        <div className="w-full px-4 py-12 sm:px-6 sm:py-16 col-span-3 lg:px-12 lg:py-24">
-          <div className="w-full flex px-40">
+        <div className="w-full px-4 py-12 sm:px-6 sm:py-16 col-span-5 lg:col-span-3 lg:px-12 lg:py-24">
+          <div className="w-full flex px-8 lg:px-40 pb-20">
             <div className="flex flex-col w-1/2">
               <h1>Register</h1>
               <div className="w-full h-2 bg-blue-500 "></div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Login_image from "../../public/unsplash_9pjBx5uVBlg.png";
 import { UserContext } from "@/UserContext";
+import Link from "next/link";
 
 function Login() {
   const router = useRouter();
@@ -45,7 +46,7 @@ function Login() {
   return (
     <Layout>
       <section className="relative grid grid-cols-5 lg:h-screen lg:items-center">
-        <div className="relative h-64 w-full sm:h-96 lg:h-full col-span-2">
+        <div className="relative h-64 w-full sm:h-96 lg:h-full col-span-2 lg:block hidden">
           <Image
             alt="Welcome"
             src={Login_image}
@@ -61,8 +62,8 @@ function Login() {
           </div>
         </div>
 
-        <div className="w-full px-4 py-12 sm:px-6 sm:py-16 col-span-3 lg:px-8 lg:py-24">
-          <div className="w-full flex px-40">
+        <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:col-span-3 col-span-5 lg:px-8 lg:py-24">
+          <div className="w-full flex px-8 lg:px-40 pb-20">
             <div className="flex flex-col w-1/2">
               <h1>Register</h1>
               <div className="w-full h-2 bg-gray-300"></div>
@@ -156,11 +157,11 @@ function Login() {
             </div>
 
             <div className="flex items-center justify-between">
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 flex gap-2">
                 No account?
-                <a className="underline" href="">
+                <Link className="underline" href="/register">
                   Sign up
-                </a>
+                </Link>
               </p>
 
               <button
