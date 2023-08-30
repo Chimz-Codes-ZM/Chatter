@@ -106,7 +106,7 @@ if ( response.status !== 200 )   {
                 name="first_name"
                 value={firstName}
                 onChange={handleFirstNameChange}
-                className="mt-1 w-full rounded-md py-3 border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                className="mt-1 w-full rounded-md py-3 border-gray-200 bg-white text-sm text-gray-700 shadow"
               />
             </div>
 
@@ -124,7 +124,7 @@ if ( response.status !== 200 )   {
                 name="last_name"
                 value={lastName}
                 onChange={handleLastNameChange}
-                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm py-3"
+                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow py-3"
               />
             </div>
 
@@ -142,7 +142,7 @@ if ( response.status !== 200 )   {
                 name="email"
                 value={email}
                 onChange={handleEmailChange}
-                className="mt-1 w-full rounded-md border-gray-200 py-3 bg-white text-sm text-gray-700 shadow-sm"
+                className="mt-1 w-full rounded-md border-gray-200 py-3 bg-white text-sm text-gray-700 shadow"
               />
             </div>
 
@@ -160,7 +160,7 @@ if ( response.status !== 200 )   {
                 name="password"
                 value={password}
                 onChange={handlePasswordChange}
-                className="mt-1 w-full rounded-md border-gray-200 py-3 bg-white text-sm text-gray-700 shadow-sm"
+                className="mt-1 w-full rounded-md border-gray-200 py-3 bg-white text-sm text-gray-700 shadow"
               />
             </div>
 
@@ -178,7 +178,7 @@ if ( response.status !== 200 )   {
                 name="password_confirmation"
                 value={passwordConfirmation}
                 onChange={handlePasswordConfirmationChange }
-                className="mt-1 w-full rounded-md border-gray-200 py-3 bg-white text-sm text-gray-700 shadow-sm"
+                className="mt-1 w-full rounded-md border-gray-200 py-3 bg-white text-sm text-gray-700 shadow"
               />
             </div>
 
@@ -226,11 +226,7 @@ if ( response.status !== 200 )   {
                   .
                 </p>
 
-                <div className="w-full">
-                  <div  className="inline-block cursor-pointer shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
-                    Sign in with Google
-                  </div>
-                </div>
+                
               </div>
             </div>
           </form>

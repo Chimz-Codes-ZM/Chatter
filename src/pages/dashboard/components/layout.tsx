@@ -84,24 +84,6 @@ router.push('/')
                   <h1 className="text-xl">Overview</h1>
                 </div>
                 <div className="w-full flex flex-col">
-                  <Link href="/dashboard/write">
-                    <div
-                      className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
-											${
-                        activePage === "write" 
-                          ? "font-bold  text-[#543EE0]"
-                          : "hover:font-bold hover:text-[#543EE0] text-gray-400"
-                      }
-										`}
-                    >
-                      <div className="text-xl">
-                        <BsFillPenFill />
-                      </div>
-                      <h1 className="hidden sm:block">Write</h1>
-                    </div>
-                  </Link>
-                </div>
-                <div className="w-full flex flex-col">
                   <Link href="/dashboard">
                     <div
                       className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
@@ -120,6 +102,25 @@ router.push('/')
                   </Link>
                 </div>
                 <div className="w-full flex flex-col">
+                  <Link href="/dashboard/write">
+                    <div
+                      className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
+											${
+                        activePage === "write" 
+                          ? "font-bold  text-[#543EE0]"
+                          : "hover:font-bold hover:text-[#543EE0] text-gray-400"
+                      }
+										`}
+                    >
+                      <div className="text-xl">
+                        <BsFillPenFill />
+                      </div>
+                      <h1 className="hidden sm:block">Write</h1>
+                    </div>
+                  </Link>
+                </div>
+                
+                {/* <div className="w-full flex flex-col">
                   <Link href="/dashboard/team_blogs">
                     <div
                       className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
@@ -136,8 +137,8 @@ router.push('/')
                       <h1 className="hidden sm:block">Team blogs</h1>
                     </div>
                   </Link>
-                </div>
-                <div className="w-full flex flex-col">
+                </div> */}
+                {/* <div className="w-full flex flex-col">
                   <Link href="/dashboard/drafts">
                     <div
                       className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
@@ -154,8 +155,8 @@ router.push('/')
                       <h1 className="hidden sm:block">Drafts</h1>
                     </div>
                   </Link>
-                </div>
-                <div className="w-full flex flex-col">
+                </div> */}
+                {/* <div className="w-full flex flex-col">
                   <Link href="/dashboard/analytics">
                     <div
                       className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
@@ -172,10 +173,10 @@ router.push('/')
                       <h1 className="hidden sm:block">Analytics</h1>
                     </div>
                   </Link>
-                </div>
+                </div> */}
               </div>
 
-              <div className="w-full h-max flex flex-col gap-2 pr-5 pt-10">
+              {/* <div className="w-full h-max flex flex-col gap-2 pr-5 pt-10">
                 <div className="flex flex-col ">
                   <h1 className="text-xl">Personal</h1>
                   <div className="w-full flex flex-col">
@@ -216,7 +217,7 @@ router.push('/')
                     </Link>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="w-full h-max flex gap-3 items-center pr-5 pt-10 text-red-600 hover:text-red-400 transition-all duration-300" onClick={signOut}>
                 <div className="text-xl">
