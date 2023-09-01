@@ -17,6 +17,7 @@ export default function Home() {
       <Why_chatter />
       <Testimonial/>
       <Write_section />
+      
     </Layout>
   )
 }
