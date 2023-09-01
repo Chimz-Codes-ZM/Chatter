@@ -5,9 +5,13 @@ import { useRouter } from "next/router";
 import Loading from "../components/loading";
 import Image from "next/image";
 import parse from "html-react-parser";
-
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), {
+  ssr: false,
+});
 
 const modules = {
   toolbar: [
@@ -121,15 +125,6 @@ const EditPostModal = () => {
 const PostPage = () => {
   const router = useRouter();
   const [makeUpdate, setMakeUpdate] = useState(false);
-
-  if (router.isFallback) {
-    return (
-      <Layout>
-        <Loading />
-      </Layout>
-    );
-  }
-
   const [postInfo, setPostInfo] = useState<PostInfo | null>(null);
   const { _id } = router.query;
 
@@ -147,6 +142,16 @@ const PostPage = () => {
   }, [_id]);
 
   const {userInfo} = useContext(UserContext) || {};
+
+  if (router.isFallback) {
+    return (
+      <Layout>
+        <Loading />
+      </Layout>
+    );
+  }
+
+
 
 
   const signedInUserName = userInfo?.email

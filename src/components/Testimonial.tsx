@@ -10,10 +10,10 @@ const Testimonial = () => {
       </div>
       <div className="flex flex-col gap-6">
         <p>
-          "Chatter has become an integral part of my online experience. As a
+        &quot;Chatter has become an integral part of my online experience. As a
           user of this incredible blogging platform, I have discovered a vibrant
           community of individuals who are passionate about sharing their ideas
-          and engaging in thoughtful discussions.”
+          and engaging in thoughtful discussions.&quot;
         </p>
         <p>
           <span className="font-semibold">Adebobola Muhydeen</span> , Software

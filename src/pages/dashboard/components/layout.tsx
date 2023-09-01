@@ -38,7 +38,7 @@ fetch('http://localhost:4000/profile', {
     }
   });
 });
-  }, [])
+  }, [userInfo])
   
   async function signOut() {
     fetch('http://localhost:4000/logout', {

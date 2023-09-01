@@ -1,8 +1,13 @@
 import React, { useState, FormEvent } from 'react'
 import { useRouter } from 'next/router';
 import Layout from './components/layout'
-import ReactQuill from 'react-quill'
+// import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), {
+  ssr: false,
+});
 
 const  modules = {
   toolbar: [
@@ -21,7 +26,7 @@ const formats = [
   'link', 'image'
 ] 
 
-const write = () => {
+const Write = () => {
 
   const router = useRouter()
 
@@ -73,4 +78,4 @@ router.push('/dashboard')
   )
 }
 
-export default write
+export default Write
