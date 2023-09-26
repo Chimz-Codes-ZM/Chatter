@@ -47,7 +47,7 @@ const Layout: React.FC<LayoutProps> = ({ activePage, children }) => {
       router.push("/");
     }
   }
-
+// 
   const username = userInfo?.email;
 
   return (

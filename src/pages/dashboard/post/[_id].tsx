@@ -129,7 +129,7 @@ const PostPage = () => {
   const { _id } = router.query;
 
   useEffect(() => {
-    fetch(`http://localhost:4000/posts/${_id}`).then((response) => {
+    fetch(`https://chatter-backend-seven.vercel.app/posts/${_id}`).then((response) => {
       response
         .json()
         .then((postInfo) => {
@@ -179,7 +179,7 @@ const PostPage = () => {
             <h1 className=" font-bold text-4xl pb-2">{postInfo.title}</h1>
             <p className="py-2 font-light ">{postInfo.summary}</p>
             <Image
-              src={`http://localhost:4000/${postInfo.cover}`}
+              src={`https://chatter-backend-seven.vercel.app/${postInfo.cover}`}
               alt="cover"
               width={500}
               height={300}
