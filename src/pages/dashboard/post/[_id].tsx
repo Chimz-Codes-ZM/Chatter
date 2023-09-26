@@ -68,7 +68,7 @@ const EditPostModal = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:4000/posts/${_id}`)
+    fetch(`https://chatter-backend-seven.vercel.app/posts/${_id}`)
       .then((response) => response.json())
       .then((postData) => {
         setPost(postData);
@@ -82,7 +82,7 @@ const EditPostModal = () => {
   }, [_id]);
 
   const handleUpdatePost = () => {
-    fetch(`http://localhost:4000/post/${_id}`, {
+    fetch(`https://chatter-backend-seven.vercel.app/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

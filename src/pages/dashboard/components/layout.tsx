@@ -1,8 +1,8 @@
-import React, {useEffect, useState, useContext} from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BiBookmarks } from "react-icons/bi";
-import { BsFillPenFill } from "react-icons/bs"
+import { BsFillPenFill } from "react-icons/bs";
 import { AiOutlineTeam } from "react-icons/ai";
 import {
   MdOutlineDrafts,
@@ -12,11 +12,9 @@ import {
   MdNotificationsNone,
   MdLogout,
 } from "react-icons/md";
-import { UserContext } from '@/UserContext';
+import { UserContext } from "@/UserContext";
 import Router, { useRouter } from "next/router";
-import  isAuthenticated  from "../../../components/isAuthenticated"
-
-
+import isAuthenticated from "../../../components/isAuthenticated";
 
 interface LayoutProps {
   activePage: string;
@@ -24,36 +22,34 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ activePage, children }) => {
-  const router = useRouter()
+  const router = useRouter();
   const { userInfo, setUserInfo } = useContext(UserContext) || {};
-  
-  useEffect(() => {
-fetch('http://localhost:4000/profile', {
-  credentials: 'include',
-}).then(response => {
-  response.json().then(userInfo => {
-    if(setUserInfo) {
-      setUserInfo(userInfo)
 
-    }
-  });
-});
-  }, [userInfo])
-  
+  useEffect(() => {
+    fetch("https://chatter-backend-seven.vercel.app/profile", {
+      credentials: "include",
+    }).then((response) => {
+      response.json().then((userInfo) => {
+        if (setUserInfo) {
+          setUserInfo(userInfo);
+        }
+      });
+    });
+  }, [userInfo]);
+
   async function signOut() {
-    fetch('http://localhost:4000/logout', {
-      credentials: 'include',
-      method: 'POST',
+    fetch("https://chatter-backend-seven.vercel.app/logout", {
+      credentials: "include",
+      method: "POST",
     });
     if (setUserInfo) {
-          setUserInfo(null);
-router.push('/')
+      setUserInfo(null);
+      router.push("/");
     }
-  
   }
 
-  const username = userInfo?.email
-  
+  const username = userInfo?.email;
+
   return (
     <>
       <main className="h-screen w-screen flex relative">
@@ -95,7 +91,7 @@ router.push('/')
 										`}
                     >
                       <div className="text-xl">
-                      <MdDynamicFeed />
+                        <MdDynamicFeed />
                       </div>
                       <h1 className="hidden sm:block">Feed</h1>
                     </div>
@@ -106,7 +102,7 @@ router.push('/')
                     <div
                       className={`flex transition-all duration-500  gap-3 flex items-center rounded px-2 py-1
 											${
-                        activePage === "write" 
+                        activePage === "write"
                           ? "font-bold  text-[#543EE0]"
                           : "hover:font-bold hover:text-[#543EE0] text-gray-400"
                       }
@@ -119,7 +115,7 @@ router.push('/')
                     </div>
                   </Link>
                 </div>
-                
+
                 {/* <div className="w-full flex flex-col">
                   <Link href="/dashboard/team_blogs">
                     <div
@@ -219,7 +215,10 @@ router.push('/')
                 </div>
               </div> */}
 
-              <div className="w-full h-max flex gap-3 items-center pr-5 pt-10 text-red-600 hover:text-red-400 transition-all duration-300" onClick={signOut}>
+              <div
+                className="w-full h-max flex gap-3 items-center pr-5 pt-10 text-red-600 hover:text-red-400 transition-all duration-300"
+                onClick={signOut}
+              >
                 <div className="text-xl">
                   <MdLogout />
                 </div>
@@ -231,12 +230,14 @@ router.push('/')
           </div>
         </nav>
         <nav className="fixed bg-white top-0 left-0 border-b w-full h-12 px-14 gap-4 flex justify-around items-center z-40">
-          <input type="text" id="search" name="search" placeholder="Search chatter" className="w-[459px] h-8 p-[0px] px-5 rounded-lg border border-stone-300 justify-start items-center gap-6 inline-flex"
-            
-           />
-           <div>
-            {username}
-           </div>
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Search chatter"
+            className="w-[459px] h-8 p-[0px] px-5 rounded-lg border border-stone-300 justify-start items-center gap-6 inline-flex"
+          />
+          <div>{username}</div>
         </nav>
 
         <div className="w-full h-full pt-16 overflow-y-scroll">{children}</div>

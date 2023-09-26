@@ -52,7 +52,7 @@ data.set('content', content);
 if (file && file.length > 0) {
   data.set('file', file[0]);
 }
-const response = await fetch('http://localhost:4000/post', {
+const response = await fetch('https://chatter-backend-seven.vercel.app/post', {
    method: 'POST',
    body: data,
    credentials: 'include'
