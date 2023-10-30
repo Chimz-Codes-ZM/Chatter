@@ -24,7 +24,7 @@ function Login() {
   async function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const response = await fetch("https://chatter-backend-seven.vercel.app/login", {
+    const response = await fetch("https://chatter-ynr4.onrender.com/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },

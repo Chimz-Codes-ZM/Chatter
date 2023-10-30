@@ -68,7 +68,7 @@ const EditPostModal = () => {
 
 
   useEffect(() => {
-    fetch(`https://chatter-backend-seven.vercel.app/posts/${_id}`)
+    fetch(`https://chatter-ynr4.onrender.com/posts/${_id}`)
       .then((response) => response.json())
       .then((postData) => {
         setPost(postData);
@@ -82,7 +82,7 @@ const EditPostModal = () => {
   }, [_id]);
 
   const handleUpdatePost = () => {
-    fetch(`https://chatter-backend-seven.vercel.app/${_id}`, {
+    fetch(`https://chatter-ynr4.onrender.com/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -129,7 +129,7 @@ const PostPage = () => {
   const { _id } = router.query;
 
   useEffect(() => {
-    fetch(`https://chatter-backend-seven.vercel.app/posts/${_id}`).then((response) => {
+    fetch(`https://chatter-ynr4.onrender.com/posts/${_id}`).then((response) => {
       response
         .json()
         .then((postInfo) => {
@@ -179,7 +179,7 @@ const PostPage = () => {
             <h1 className=" font-bold text-4xl pb-2">{postInfo.title}</h1>
             <p className="py-2 font-light ">{postInfo.summary}</p>
             <Image
-              src={`https://chatter-backend-seven.vercel.app/${postInfo.cover}`}
+              src={`https://chatter-ynr4.onrender.com/${postInfo.cover}`}
               alt="cover"
               width={500}
               height={300}

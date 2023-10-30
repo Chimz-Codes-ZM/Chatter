@@ -17,7 +17,7 @@ interface PostProps {
 const Feed = () => {
   const [posts, setPosts] = useState<PostProps[]>([]);
   useEffect(() => {
-    fetch("https://chatter-backend-seven.vercel.app/posts").then((response) => {
+    fetch("https://chatter-ynr4.onrender.com/posts").then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
       });
@@ -32,7 +32,7 @@ const Feed = () => {
             <Link key={post._id} href={`/dashboard/post/${post._id}`}>
               <div className="border rounded overflow-hidden shadow-md hover:shadow-lg transition duration-300 ease-in-out">
                 <img
-                  src={`https://chatter-backend-seven.vercel.app/${post.cover}`}
+                  src={`https://chatter-ynr4.onrender.com/${post.cover}`}
                   alt="cover"
                   className="w-full h-48 object-cover"
                 />

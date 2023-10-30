@@ -26,7 +26,7 @@ const Layout: React.FC<LayoutProps> = ({ activePage, children }) => {
   const { userInfo, setUserInfo } = useContext(UserContext) || {};
 
   useEffect(() => {
-    fetch("https://chatter-backend-seven.vercel.app/profile", {
+    fetch("https://chatter-ynr4.onrender.com/profile", {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -38,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ activePage, children }) => {
   }, [userInfo]);
 
   async function signOut() {
-    fetch("https://chatter-backend-seven.vercel.app/logout", {
+    fetch("https://chatter-ynr4.onrender.com/logout", {
       credentials: "include",
       method: "POST",
     });

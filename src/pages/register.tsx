@@ -39,7 +39,7 @@ const Register = () => {
 
     
 
- const response =     await fetch('https://chatter-backend-seven.vercel.app/register', {
+ const response =     await fetch('https://chatter-ynr4.onrender.com/register', {
         method: 'POST',
         body: JSON.stringify({firstName, lastName, email, password, passwordConfirmation}),
         headers: { 'Content-Type': 'application/json' },
